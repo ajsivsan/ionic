@@ -3,13 +3,16 @@ import { ionicBootstrap, Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { HomePage } from './pages/home/home';
+import { LoginPage } from './pages/login/login';
+import { SignupPage } from './pages//signup/signup';
+
 
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = SignupPage;
 
   constructor(public platform: Platform) {
     platform.ready().then(() => {

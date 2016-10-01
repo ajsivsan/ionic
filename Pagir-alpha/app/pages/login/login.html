@@ -1,0 +1,37 @@
+<ion-header >
+  <ion-toolbar primary>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list no-lines>
+      <ion-item-divider light>
+        <center>
+          <img src="img/pagir-logo-512.png">
+        </center>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input clearInput placeholder="Username" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="Password" type="password" ></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="center">
+        <center>
+          <button outline round>
+            Login
+          </button></center>
+    </div>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-toolbar>
+    <ion-title>New to Pagir?</ion-title>
+    <ion-buttons end>
+      <button (click)="navigateRegister()">
+        <ion-icon ios="ios-log-in" md="md-log-in"></ion-icon>
+        Register
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

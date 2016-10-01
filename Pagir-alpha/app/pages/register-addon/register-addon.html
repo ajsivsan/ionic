@@ -1,0 +1,43 @@
+
+<ion-header>
+<ion-navbar primary>
+    <ion-title>Additional Information</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list no-lines>
+      <ion-item-divider light>Emergency Contact</ion-item-divider>
+      <ion-item>
+        <ion-input clearInput placeholder="Contact number 1" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="Contact number 2" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Default message for the emergency contact"> </ion-textarea>
+      </ion-item>
+      <ion-item-divider light>Photo ID Proof</ion-item-divider>
+      <ion-item>
+         <center><img src="img/photo-camera.png" class="register-addon"></center>
+      </ion-item>
+    </ion-list>
+    <div class="center">
+        <center>
+          <button outline round (click)="navigateHome()">
+            Create Account
+          </button></center>
+    </div>
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar>
+    <ion-title>Already a user?</ion-title>
+    <ion-buttons end>
+      <button (click)="navigateLogin()">
+        <ion-icon ios="ios-log-in" md="md-log-in"></ion-icon>
+        Log In
+      </button>
+      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

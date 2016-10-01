@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-toolbar primary>
+    <ion-title>REGISTER</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list no-lines>
+      <ion-item-divider light>
+        <ion-button>
+          <center><img src="img/user.png"></center>
+          <center><button clear primary>Add</button></center>
+        </ion-button>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input clearInput placeholder="Username"><ion-icon checkmark></ion-icon></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Password" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="Email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input clearInput placeholder="Full Name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gender</ion-label>
+        <ion-select>
+          <ion-option value="male">Male</ion-option>
+          <ion-option value="female">Female</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date of Birth</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <div class="center">
+        <center>
+          <button outline round (click)="nextPage()">
+            ADDITIONAL INFO
+            <ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon>
+          </button></center>
+    </div>
+  
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar>
+    <ion-title>Already a user?</ion-title>
+    <ion-buttons end>
+      <button (click)="navigateLogin()">
+        <ion-icon ios="ios-log-in" md="md-log-in"></ion-icon>
+        Log In
+      </button>
+      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
