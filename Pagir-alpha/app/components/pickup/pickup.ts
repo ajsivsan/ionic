@@ -1,20 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, EventEmitter, Output } from '@angular/core';
 
-/*
-  Generated class for the Pickup component.
-
-  See https://angular.io/docs/ts/latest/api/core/ComponentMetadata-class.html
-  for more info on Angular 2 Components.
-*/
 @Component({
   selector: 'pickup',
   templateUrl: 'build/components/pickup/pickup.html'
 })
-export class Pickup {
+export class Pickup implements OnChanges {
+  @Input() public isStartSet: boolean;
+  @Input() map: google.maps.Map;
+  @Output() pickupLoc = new EventEmitter();
 
-  text: string;
+  public pickupMarker: google.maps.Marker;
 
   constructor() {
-    this.text = 'Hello World';
+
+  }
+
+  ngOnChanges() {
+    if (this.isStartSet) {
+      this.showPickupMarker();
+    } else {
+      this.removePickupMarker();
+    }
+  }
+
+  showPickupMarker() {
+    this.pickupLoc.emit({'location': this.map.getCenter()});
+    this.pickupMarker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.BOUNCE,
+      position: this.map.getCenter(),
+      icon: 'img/mark.png'
+    });
+    setTimeout(() => {
+      this.pickupMarker.setAnimation(null);
+    }, 750);
+  }
+
+  removePickupMarker() {
+    if (this.pickupMarker) {
+      this.pickupMarker.setMap(null);
+    }
   }
 }

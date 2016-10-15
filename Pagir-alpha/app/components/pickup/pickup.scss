@@ -1,0 +1,13 @@
+pickup{
+    pointer-events:none;
+    #locator{
+        background-image: url('../../img/select-marker.png');
+        position: absolute;
+        left:50%;
+        top:50%;
+        width:30px;
+        height:48px;
+        margin-left:-5px;
+        margin-top:-48px;
+    }
+}

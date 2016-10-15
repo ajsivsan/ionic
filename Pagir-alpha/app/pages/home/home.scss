@@ -13,4 +13,21 @@
       text-align: center;
       background: linear-gradient(transparent, map-get($colors, light));
   }
+  .bottom{
+      position: absolute;
+      bottom:0;
+      width:100%;
+  }
+  .request-controls{
+      padding: 10px;
+      text-align: center;
+      background: linear-gradient(transparent, map-get($colors, light));
+  }
+  button.fab{
+      position: absolute;
+      bottom: 75px;
+      background:#ffffff;
+      opacity: 1;
+      box-shadow: 0px 1px 5px grey;
+  }
 }

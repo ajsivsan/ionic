@@ -1,43 +1,36 @@
 import { Component } from '@angular/core';
 import { NavController, ActionSheetController, AlertController } from 'ionic-angular';
-/*
-  This component will be used to set the payment type for the applicaiton
-  The accepted payment types are 
-  - Cash
-  - Credit Card
-  - Pagir Account
-*/
+
 @Component({
   selector: 'action-sheet',
   templateUrl: 'build/components/action-sheet/action-sheet.html'
 })
 export class ActionSheet {
-
+  public isDriver:boolean;
   constructor(public actionSheetController: ActionSheetController){
 
   }
   actionSheet(){
-
     let actionSheet = this.actionSheetController.create({
-      title: 'Select Payment option',
+      title: 'Change User Type',
       buttons:[{
-        text: 'Credit Card',
+        text: 'Driver',
         handler: () =>{
-          console.log('Add')
+          this.isDriver = true;
         }
       },
       {
-        text: 'Cash',
+        text: 'Rider',
         handler: () =>{
-          console.log('Updated')
+          this.isDriver = false;
         }
-      },
-      {
-        text: 'Pagir Balance',
-        handler: () =>{
-          console.log('Deleted')
-        }
-      }]
+      },{
+         text: 'Cancel',
+         role: 'cancel',
+         handler: () => {
+           
+         }
+       }]
     });
     actionSheet.present();
   }

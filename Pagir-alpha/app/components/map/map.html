@@ -1,3 +1,5 @@
 <div class="wrapper">
   <div id="map"></div>
+  <pickup [map]="map" [isStartSet]="isStartMarked" [hidden]="isStartMarked" (pickupLoc)="onPickupLocation($event)"></pickup>
+  <drop [map]="map" [isDropSet]="isEndMarked" [hidden]="!isStartMarked" [hidden]="isEndMarked" (dropLocation)="onDropLocation($event)"></drop>
 </div>

@@ -1,10 +1,42 @@
 <ion-header>
   <ion-toolbar primary>
-    <ion-title>Pickup Location</ion-title>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Set Locations</ion-title>
+    <ion-buttons end>
+      <button (click)="action.actionSheet()" [hidden]="action.isDriver"> <ion-icon name="person"></ion-icon></button>
+      <button (click)="action.actionSheet()" [hidden]="!action.isDriver"> <ion-icon name="ios-speedometer-outline"></ion-icon></button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="home-page">
+
+<ion-content class="home-page" no-scroll>
   <div class="map-wrapper">
-    <map></map>
+    <map #map [isStartMarked]="isStartMarked" [isEndMarked]="isEndMarked" ></map>
   </div>
+  <div class="bottom request-controls">
+    <ion-row>
+      <!--<ion-col width-50>
+        <button block light>
+          <ion-icon name="ios-card"></ion-icon> Visa **XX
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button block light>
+          <ion-icon name="cash"></ion-icon> Cash
+        </button>
+      </ion-col>-->
+      <button class="fab" ion-button fab fab-right fab-bottom (click)="map.centerLocation()">
+          <ion-icon name="ios-locate-outline" style="color: #19B086; weight: bold;"></ion-icon>
+      </button>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button [hidden]="isStartMarked" block primary (click)="markStart()">Start Here</button>
+        <button [hidden]="!isStartMarked" block secondary (click)="markEnd()">End Here</button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <action-sheet #action ></action-sheet>
 </ion-content>

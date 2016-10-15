@@ -9,7 +9,7 @@ import { SignupPage } from './pages//signup/signup';
 
 
 @Component({
-  template: '<ion-nav [root]="rootPage"></ion-nav>'
+  templateUrl: 'build/app.html'
 })
 export class MyApp {
   rootPage: any = SignupPage;
